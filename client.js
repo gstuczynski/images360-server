@@ -11,8 +11,8 @@ function init(bundle, parent, options = {}) {
     r360.getDefaultSurface()
   );
   imgFile = new URLSearchParams(window.location.search).get('img')
-
-  r360.compositor.setBackground(r360.getAssetURL(imgFile));
+  
+  imgFile ? r360.compositor.setBackground(r360.getAssetURL(imgFile)) : false;
 }
 
 window.React360 = {init};
